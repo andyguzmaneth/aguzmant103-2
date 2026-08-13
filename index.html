@@ -30,9 +30,9 @@
     </a>
 
     <nav class="nav__links" aria-label="Principal">
-      <a href="#productos">Chunches</a>
+      <a href="#productos">Juguetes</a>
+      <a href="#guia-edad">Por edad</a>
       <a href="#laboratorio">Laboratorio</a>
-      <a href="#como-funciona">Cómo funciona</a>
       <a href="#escuelas">Escuelas</a>
       <a href="#envios">Envíos</a>
       <a href="#faq">Preguntas</a>
@@ -70,8 +70,9 @@
         <span class="squiggle">enseñan jugando</span>
       </h1>
       <p class="hero__lead">
-        Fidgets, rompecabezas y juguetes articulados diseñados por acá, para manos
-        inquietas y cerebros curiosos. Cada pieza trae una lección escondida
+        Juguetes de estimulación temprana, sensoriales, didácticos y Montessori,
+        diseñados por acá. Desde el móvil de contrastes del primer mes hasta el
+        rompecabezas que arma un escolar: cada pieza trabaja algo concreto
         —y ninguna se siente como tarea.
       </p>
       <div class="hero__cta">
@@ -122,40 +123,111 @@
   </div>
 </div>
 
-<!-- ============ BENEFICIOS ============ -->
-<section class="section section--tight" id="beneficios">
+<!-- ============ CATEGORÍAS ============ -->
+<section class="section section--tight" id="categorias">
   <div class="wrap">
     <header class="section__head reveal">
-      <p class="eyebrow">Por qué funcionan</p>
-      <h2>Juguetes que trabajan mientras el güila juega</h2>
+      <p class="eyebrow">Cinco familias</p>
+      <h2>Cada juguete tiene un trabajo que hacer</h2>
       <p class="section__lead">
-        Cada chunche nace de una pregunta: <em>¿qué habilidad puede crecer aquí?</em>
-        Después le ponemos color, movimiento y un clic bien satisfactorio.
+        No los agrupamos por color ni por personaje, sino por lo que estimulan.
+        Así sabés exactamente qué estás poniendo en esas manos.
       </p>
     </header>
 
-    <div class="benefits">
-      <article class="benefit reveal" style="--i:0">
-        <span class="benefit__icon" aria-hidden="true">🖐️</span>
-        <h3>Motricidad fina</h3>
-        <p>Encajar, girar, doblar. Los dedos aprenden precisión sin darse cuenta.</p>
+    <div class="cats">
+      <article class="cat reveal" style="--i:0; --cat:var(--chicle)">
+        <span class="cat__icon" aria-hidden="true">🍼</span>
+        <h3>Estimulación temprana</h3>
+        <p>
+          Para bebés y niños pequeños. Trabajan los sentidos, el movimiento y el
+          desarrollo cognitivo en los primeros 36 meses, que es cuando más rinde.
+        </p>
+        <a class="cat__link" href="#productos" data-ir-cat="temprana">Ver los de esta familia →</a>
       </article>
-      <article class="benefit reveal" style="--i:1">
-        <span class="benefit__icon" aria-hidden="true">➗</span>
-        <h3>Matemática tangible</h3>
-        <p>Fracciones, simetrías y volúmenes que se pueden agarrar con la mano.</p>
+
+      <article class="cat reveal" style="--i:1; --cat:var(--caribe)">
+        <span class="cat__icon" aria-hidden="true">🌈</span>
+        <h3>Sensoriales</h3>
+        <p>
+          Estimulan tacto, vista y oído: texturas encontradas, contrastes fuertes,
+          sonidos suaves y piezas que piden ser apretadas.
+        </p>
+        <a class="cat__link" href="#productos" data-ir-cat="sensorial">Ver los de esta familia →</a>
       </article>
-      <article class="benefit reveal" style="--i:2">
-        <span class="benefit__icon" aria-hidden="true">🔬</span>
-        <h3>Ciencia curiosa</h3>
-        <p>Engranajes, palancas y gravedad explicados a punta de experimento.</p>
+
+      <article class="cat reveal" style="--i:2; --cat:var(--mango)">
+        <span class="cat__icon" aria-hidden="true">🔤</span>
+        <h3>Didácticos</h3>
+        <p>
+          Enseñan una habilidad o un concepto mientras se juega: fracciones,
+          formas, animales, geografía tica. El contenido va escondido en la pieza.
+        </p>
+        <a class="cat__link" href="#productos" data-ir-cat="didactico">Ver los de esta familia →</a>
       </article>
-      <article class="benefit reveal" style="--i:3">
-        <span class="benefit__icon" aria-hidden="true">🌊</span>
-        <h3>Calma y foco</h3>
-        <p>Fidgets pensados para regular la ansiedad y sostener la atención.</p>
+
+      <article class="cat reveal" style="--i:3; --cat:var(--selva)">
+        <span class="cat__icon" aria-hidden="true">🧗</span>
+        <h3>De desarrollo</h3>
+        <p>
+          Enfocados en motricidad fina y gruesa, lenguaje, coordinación y
+          razonamiento. Son los que empujan el siguiente hito.
+        </p>
+        <a class="cat__link" href="#productos" data-ir-cat="desarrollo">Ver los de esta familia →</a>
+      </article>
+
+      <article class="cat reveal" style="--i:4; --cat:var(--morado)">
+        <span class="cat__icon" aria-hidden="true">🪵</span>
+        <h3>Montessori</h3>
+        <p>
+          Promueven autonomía, exploración y aprendizaje práctico. Una sola
+          dificultad por juguete y control de error incluido: el güila se corrige solo.
+        </p>
+        <a class="cat__link" href="#productos" data-ir-cat="montessori">Ver los de esta familia →</a>
       </article>
     </div>
+  </div>
+</section>
+
+<!-- ============ GUÍA POR EDAD ============ -->
+<section class="section section--guia" id="guia-edad">
+  <div class="wrap">
+    <header class="section__head reveal">
+      <p class="eyebrow">Guía de estimulación</p>
+      <h2>¿Qué le sirve a esta edad?</h2>
+      <p class="section__lead">
+        Los primeros tres años no son todos iguales: cada tramo abre una destreza
+        nueva. Tocá un rango y te decimos qué está pasando y qué buscar.
+      </p>
+    </header>
+
+    <div class="guia reveal">
+      <div class="guia__meses" role="tablist" aria-label="Rangos de edad en meses">
+        <button class="mes is-active" role="tab" aria-selected="true" data-mes="0-3">0–3 m</button>
+        <button class="mes" role="tab" aria-selected="false" tabindex="-1" data-mes="3-6">3–6 m</button>
+        <button class="mes" role="tab" aria-selected="false" tabindex="-1" data-mes="6-9">6–9 m</button>
+        <button class="mes" role="tab" aria-selected="false" tabindex="-1" data-mes="9-12">9–12 m</button>
+        <button class="mes" role="tab" aria-selected="false" tabindex="-1" data-mes="12-18">12–18 m</button>
+        <button class="mes" role="tab" aria-selected="false" tabindex="-1" data-mes="18-24">18–24 m</button>
+        <button class="mes" role="tab" aria-selected="false" tabindex="-1" data-mes="24-36">2–3 años</button>
+      </div>
+
+      <div class="guia__panel" id="guiaPanel" role="tabpanel" tabindex="0" aria-live="polite">
+        <!-- inyectado por script.js -->
+      </div>
+    </div>
+
+    <p class="guia__aviso reveal">
+      <span class="guia__aviso-icono" aria-hidden="true">⚠️</span>
+      <span>
+        <strong>Sobre seguridad:</strong> los juguetes para menores de 3 años se imprimen
+        en <strong>pieza única</strong>, sin partes que se desprendan y con un diámetro
+        mayor al del cilindro de atragantamiento. Aun así, el plástico impreso en 3D
+        tiene capas microscópicas que no se esterilizan del todo: para bebés que se lo
+        llevan todo a la boca, pedí siempre nuestra versión sellada y no dejés al bebé
+        sin supervisión.
+      </span>
+    </p>
   </div>
 </section>
 
@@ -163,29 +235,35 @@
 <section class="section" id="productos">
   <div class="wrap">
     <header class="section__head reveal">
-      <p class="eyebrow">La chunchería</p>
-      <h2>Escogé tu próxima obsesión</h2>
-      <p class="section__lead">Filtrá por edad o por lo que querés fortalecer.</p>
+      <p class="eyebrow">El catálogo</p>
+      <h2>Escogé por edad o por familia</h2>
+      <p class="section__lead">
+        Cada juguete dice qué estimula y desde cuándo sirve.
+      </p>
     </header>
 
-    <div class="filters reveal" role="group" aria-label="Filtrar chunches">
+    <div class="filters reveal" role="group" aria-label="Filtrar juguetes">
       <div class="filters__row">
         <span class="filters__label">Edad</span>
         <div class="chips" data-filter-group="edad">
           <button class="chip is-active" data-value="todas" aria-pressed="true">Todas</button>
-          <button class="chip" data-value="3" aria-pressed="false">3+</button>
-          <button class="chip" data-value="6" aria-pressed="false">6+</button>
-          <button class="chip" data-value="8" aria-pressed="false">8+</button>
+          <button class="chip" data-value="0-6m"  aria-pressed="false">0–6 meses</button>
+          <button class="chip" data-value="6-12m" aria-pressed="false">6–12 meses</button>
+          <button class="chip" data-value="12-24m" aria-pressed="false">1–2 años</button>
+          <button class="chip" data-value="24-36m" aria-pressed="false">2–3 años</button>
+          <button class="chip" data-value="3a" aria-pressed="false">3–5 años</button>
+          <button class="chip" data-value="6a" aria-pressed="false">6+ años</button>
         </div>
       </div>
       <div class="filters__row">
-        <span class="filters__label">Habilidad</span>
-        <div class="chips" data-filter-group="habilidad">
+        <span class="filters__label">Familia</span>
+        <div class="chips" data-filter-group="categoria">
           <button class="chip is-active" data-value="todas" aria-pressed="true">Todas</button>
-          <button class="chip" data-value="motricidad" aria-pressed="false">🖐️ Motricidad</button>
-          <button class="chip" data-value="mate" aria-pressed="false">➗ Matemática</button>
-          <button class="chip" data-value="ciencia" aria-pressed="false">🔬 Ciencia</button>
-          <button class="chip" data-value="calma" aria-pressed="false">🌊 Calma</button>
+          <button class="chip" data-value="temprana" aria-pressed="false">🍼 Estimulación temprana</button>
+          <button class="chip" data-value="sensorial" aria-pressed="false">🌈 Sensoriales</button>
+          <button class="chip" data-value="didactico" aria-pressed="false">🔤 Didácticos</button>
+          <button class="chip" data-value="desarrollo" aria-pressed="false">🧗 Desarrollo</button>
+          <button class="chip" data-value="montessori" aria-pressed="false">🪵 Montessori</button>
         </div>
       </div>
     </div>
@@ -195,7 +273,8 @@
     <div class="products" id="productGrid"><!-- inyectado por script.js --></div>
 
     <p class="products__empty" id="productEmpty" hidden>
-      😅 Uy, no hay chunches con esa combinación. Probá aflojando un filtro.
+      😅 Uy, no tenemos nada con esa combinación todavía. Probá aflojando un filtro
+      —o escribinos y lo diseñamos.
     </p>
   </div>
 </section>
@@ -448,11 +527,12 @@
   <div class="wrap">
     <header class="section__head section__head--left reveal">
       <p class="eyebrow eyebrow--light">Para centros educativos</p>
-      <h2>Kits de aula para docentes que se la juegan</h2>
+      <h2>Kits para maternales, kínder y escuelas</h2>
       <p class="section__lead">
         Armamos kits por grupo con guía didáctica alineada al programa del MEP,
         suficientes piezas para trabajar en subgrupos y repuestos incluidos
-        —porque sí, algo se va a perder.
+        —porque sí, algo se va a perder. Trabajamos con CEN-CINAI, guarderías,
+        maternales y escuelas: decinos las edades del grupo y armamos la mezcla.
       </p>
     </header>
 
@@ -641,13 +721,22 @@
 
     <div class="faq">
       <details class="faq__item reveal">
-        <summary>¿Son seguros para güilas pequeños?</summary>
+        <summary>¿Son seguros para bebés y niños pequeños?</summary>
         <div class="faq__body">
           <p>
-            Todos los diseños marcados <strong>3+</strong> no llevan piezas sueltas
-            pequeñas y tienen bordes redondeados. Imprimimos en PLA, un plástico
-            derivado del maíz, sin BPA. Aun así, como con cualquier juguete,
-            recomendamos supervisión con menores de 3 años.
+            Todo lo que vendemos para menores de 3 años se imprime en
+            <strong>pieza única</strong>: no lleva partes que se desprendan y ninguna
+            entra en el cilindro de atragantamiento. Usamos PLA, un plástico derivado
+            del maíz, sin BPA, y lijamos cada pieza a mano.
+          </p>
+          <p>
+            Ahora, con toda honestidad: la impresión 3D deja capas microscópicas donde
+            se puede acumular suciedad, y eso importa en la etapa en que el bebé se lo
+            lleva todo a la boca. Por eso los juguetes de <strong>0 a 18 meses</strong>
+            los entregamos con un sellado sanitario opcional que los deja lavables, y
+            siempre pedimos supervisión de un adulto. Si buscás algo para morder
+            específicamente, un mordedor de silicona sigue siendo mejor opción que
+            cualquier cosa impresa —y te lo vamos a decir.
           </p>
         </div>
       </details>

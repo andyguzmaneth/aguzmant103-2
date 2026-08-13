@@ -104,65 +104,142 @@
     nums.forEach(el => obs.observe(el));
   })();
 
-  /* --------------------------------------------------- 5. Catálogo y filtros */
+  /* --------------------------------------------------- 5. Catálogo y filtros
+     edades: en qué tramos sirve. cats: a qué familias pertenece.
+     Los juguetes de menos de 3 años van marcados con pieza:'única'. */
   const CHUNCHES = [
+    /* --- Bebés: estimulación temprana y sensorial --- */
+    {
+      nombre: 'Móvil Munari de Contrastes',
+      desc: 'Blanco y negro puro, lo único que el recién nacido logra enfocar. Gira con la corriente de aire.',
+      precio: 14500, emoji: '⬛', edades: ['0-6m'], edadTxt: '0–3 m',
+      cats: ['temprana', 'montessori'], color: '#7c5cff', unica: true,
+      etiquetas: ['Enfoque visual', 'Va colgado']
+    },
+    {
+      nombre: 'Sonaja Aro Gigante',
+      desc: 'Un aro liviano que la mano entera puede agarrar, justo cuando descubre que tiene manos.',
+      precio: 6900, emoji: '⭕', edades: ['0-6m', '6-12m'], edadTxt: '3–9 m',
+      cats: ['temprana', 'sensorial'], color: '#ff5da8', unica: true,
+      etiquetas: ['Agarre palmar', 'Sonido suave']
+    },
+    {
+      nombre: 'Pelota Sensorial Calada',
+      desc: 'Calada para que los dedos entren y rueda despacio, para que gatee detrás sin frustrarse.',
+      precio: 7500, emoji: '🔮', edades: ['6-12m', '12-24m'], edadTxt: '6–15 m',
+      cats: ['sensorial', 'desarrollo'], color: '#12b0c9', unica: true,
+      etiquetas: ['Agarre a dos manos', 'Gateo']
+    },
+    {
+      nombre: 'Cascabel de Texturas',
+      desc: 'Cuatro superficies distintas en una sola pieza: lisa, acanalada, rugosa y con hoyitos.',
+      precio: 8200, emoji: '🫧', edades: ['6-12m'], edadTxt: '6–12 m',
+      cats: ['sensorial', 'temprana'], color: '#ffb703', unica: true,
+      etiquetas: ['Tacto', 'Causa y efecto']
+    },
+
+    /* --- Gateo y primeros pasos --- */
+    {
+      nombre: 'Cubo de Permanencia',
+      desc: 'La bola entra por arriba y aparece por la gaveta. El clásico Montessori del año.',
+      precio: 13900, emoji: '🎲', edades: ['6-12m', '12-24m'], edadTxt: '10–18 m',
+      cats: ['montessori', 'desarrollo'], color: '#12b06a', unica: true,
+      etiquetas: ['Permanencia del objeto', 'Pinza fina']
+    },
+    {
+      nombre: 'Encajable de Formas Gigantes',
+      desc: 'Cuatro formas grandes y una sola manera de que entren. Se corrige solo, sin que le digan nada.',
+      precio: 12500, emoji: '🔺', edades: ['12-24m'], edadTxt: '12–24 m',
+      cats: ['didactico', 'desarrollo', 'montessori'], color: '#ff6b4a', unica: true,
+      etiquetas: ['Formas', 'Control de error']
+    },
+    {
+      nombre: 'Torre de Aros Graduada',
+      desc: 'Cinco aros de mayor a menor. Ordenar por tamaño es la primera matemática de la vida.',
+      precio: 11900, emoji: '🍩', edades: ['12-24m'], edadTxt: '12–24 m',
+      cats: ['montessori', 'didactico'], color: '#12b0c9', unica: true,
+      etiquetas: ['Seriación', 'Coordinación']
+    },
+    {
+      nombre: 'Tabla de Botones y Broches',
+      desc: 'Vida práctica: abrochar, desabrochar y volver a empezar. Entrenamiento puro para vestirse solo.',
+      precio: 16500, emoji: '🧵', edades: ['24-36m', '3a'], edadTxt: '2–4 años',
+      cats: ['montessori', 'desarrollo'], color: '#7c5cff',
+      etiquetas: ['Vida práctica', 'Autonomía']
+    },
+
+    /* --- Preescolar --- */
+    {
+      nombre: 'Encajable de Animales Ticos',
+      desc: 'Perezoso, tucán, rana y mono. Se encajan y se nombran: vocabulario mientras juega.',
+      precio: 14900, emoji: '🦥', edades: ['24-36m', '3a'], edadTxt: '2–5 años',
+      cats: ['didactico', 'desarrollo'], color: '#12b06a',
+      etiquetas: ['Lenguaje', 'Fauna de CR']
+    },
+    {
+      nombre: 'Rana Saltarina Articulada',
+      desc: 'Sale impresa en una sola pieza y salta de verdad. Anatomía que se dobla en la mano.',
+      precio: 6500, emoji: '🐸', edades: ['24-36m', '3a'], edadTxt: '2–5 años',
+      cats: ['desarrollo', 'sensorial'], color: '#12b06a',
+      etiquetas: ['Biología', 'Juego libre']
+    },
+    {
+      nombre: 'Perezoso Fidget',
+      desc: 'Se cuelga del bolso y gira despacito. Nuestro superventas sensorial.',
+      precio: 5500, emoji: '🦥', edades: ['3a', '6a'], edadTxt: '3+ años',
+      cats: ['sensorial'], color: '#12b0c9',
+      etiquetas: ['Autorregulación', 'Portátil']
+    },
+
+    /* --- Escolar --- */
     {
       nombre: 'Cubo Infinito Tico',
       desc: 'Ocho piezas que giran sin fin. Imposible soltarlo en una reunión.',
-      precio: 8500, emoji: '🧊', edad: 6, edadTxt: '6+',
-      habilidades: ['motricidad', 'calma'], color: '#12b0c9',
+      precio: 8500, emoji: '🧊', edades: ['6a'], edadTxt: '6+ años',
+      cats: ['sensorial', 'desarrollo'], color: '#12b0c9',
       etiquetas: ['Motricidad fina', 'Concentración']
     },
     {
       nombre: 'Engranajes Locos',
       desc: 'Set planetario que se arma solo con las manos. Causa y efecto en vivo.',
-      precio: 12900, emoji: '⚙️', edad: 6, edadTxt: '7+',
-      habilidades: ['ciencia', 'motricidad'], color: '#ffb703',
+      precio: 12900, emoji: '⚙️', edades: ['6a'], edadTxt: '7+ años',
+      cats: ['didactico', 'desarrollo'], color: '#ffb703',
       etiquetas: ['Física', 'Mecánica']
-    },
-    {
-      nombre: 'Rana Saltarina Articulada',
-      desc: 'Imprime en una sola pieza y salta de verdad. Anatomía en la mano.',
-      precio: 6500, emoji: '🐸', edad: 3, edadTxt: '4+',
-      habilidades: ['ciencia', 'motricidad'], color: '#12b06a',
-      etiquetas: ['Biología', 'Juego libre']
     },
     {
       nombre: 'Torre de Fracciones',
       desc: 'Medios, tercios y quintos que encajan. Se entienden porque se tocan.',
-      precio: 14500, emoji: '➗', edad: 8, edadTxt: '8+',
-      habilidades: ['mate'], color: '#7c5cff',
+      precio: 14500, emoji: '➗', edades: ['6a'], edadTxt: '8+ años',
+      cats: ['didactico'], color: '#7c5cff',
       etiquetas: ['Fracciones', 'MEP 4.º–6.º']
     },
     {
       nombre: 'Dragón Flexi de Bolsillo',
       desc: '32 vértebras articuladas. Cabe en el bolsillo y aguanta la ansiedad.',
-      precio: 9900, emoji: '🐉', edad: 6, edadTxt: '5+',
-      habilidades: ['calma', 'motricidad'], color: '#ff6b4a',
+      precio: 9900, emoji: '🐉', edades: ['3a', '6a'], edadTxt: '5+ años',
+      cats: ['sensorial'], color: '#ff6b4a',
       etiquetas: ['Fidget', 'Narrativa']
     },
     {
       nombre: 'Rompecabezas Volcán Arenal',
       desc: 'Doce capas geológicas que se apilan. Geografía tica en 3D.',
-      precio: 11500, emoji: '🌋', edad: 8, edadTxt: '8+',
-      habilidades: ['ciencia', 'mate'], color: '#ff5da8',
+      precio: 11500, emoji: '🌋', edades: ['6a'], edadTxt: '8+ años',
+      cats: ['didactico'], color: '#ff5da8',
       etiquetas: ['Geografía CR', 'Geometría']
-    },
-    {
-      nombre: 'Perezoso Fidget',
-      desc: 'Se cuelga del bolso y gira despacito. Nuestro superventas sensorial.',
-      precio: 5500, emoji: '🦥', edad: 3, edadTxt: '3+',
-      habilidades: ['calma'], color: '#12b0c9',
-      etiquetas: ['Sensorial', 'Autorregulación']
     },
     {
       nombre: 'Laberinto de Canicas Modular',
       desc: 'Doce módulos que se reconfiguran. Ingeniería a punta de ensayo y error.',
-      precio: 18900, emoji: '🌀', edad: 6, edadTxt: '6+',
-      habilidades: ['ciencia', 'mate', 'motricidad'], color: '#ffb703',
+      precio: 18900, emoji: '🌀', edades: ['6a'], edadTxt: '6+ años',
+      cats: ['desarrollo', 'didactico'], color: '#ffb703',
       etiquetas: ['Ingeniería', 'Gravedad']
     }
   ];
+
+  const NOMBRE_CAT = {
+    temprana: 'Estimulación temprana', sensorial: 'Sensorial',
+    didactico: 'Didáctico', desarrollo: 'Desarrollo', montessori: 'Montessori'
+  };
 
   (function catalogo() {
     const grid   = $('#productGrid');
@@ -171,12 +248,14 @@
     if (!grid) return;
 
     grid.innerHTML = CHUNCHES.map(c => `
-      <article class="product" data-edad="${c.edad}" data-habilidades="${c.habilidades.join(' ')}">
+      <article class="product" data-edades="${c.edades.join(' ')}" data-cats="${c.cats.join(' ')}">
         <div class="product__art" style="--art:${c.color}">
           <span class="product__emoji" aria-hidden="true">${c.emoji}</span>
           <span class="product__age">${c.edadTxt}</span>
+          ${c.unica ? '<span class="product__unica" title="Se imprime en una sola pieza, sin partes que se desprendan">🔒 Pieza única</span>' : ''}
         </div>
         <div class="product__body">
+          <p class="product__cat">${c.cats.map(k => NOMBRE_CAT[k]).join(' · ')}</p>
           <h3 class="product__name">${c.nombre}</h3>
           <p class="product__desc">${c.desc}</p>
           <div class="product__tags">${c.etiquetas.map(t => `<span class="tag">${t}</span>`).join('')}</div>
@@ -189,23 +268,58 @@
       </article>
     `).join('');
 
-    const estado = { edad: 'todas', habilidad: 'todas' };
+    /* Red de seguridad para cuando se agreguen productos: si un juguete trae
+       un tramo de edad o una familia que no existe entre los filtros, queda
+       invisible en el catálogo sin que nadie se dé cuenta. Mejor avisar. */
+    (function validar() {
+      const validas = grupo => $$(`.chips[data-filter-group="${grupo}"] .chip`)
+        .map(c => c.dataset.value).filter(v => v !== 'todas');
+      const edadesOk = validas('edad'), catsOk = validas('categoria');
+      CHUNCHES.forEach(c => {
+        c.edades.filter(e => !edadesOk.includes(e)).forEach(e =>
+          console.warn(`[Pura Pieza] "${c.nombre}" tiene la edad "${e}", que no está entre los filtros.`));
+        c.cats.filter(k => !catsOk.includes(k)).forEach(k =>
+          console.warn(`[Pura Pieza] "${c.nombre}" tiene la familia "${k}", que no está entre los filtros.`));
+      });
+    })();
+
+    const estado = { edad: 'todas', categoria: 'todas' };
 
     const aplicar = () => {
       let visibles = 0;
       $$('.product', grid).forEach(card => {
-        const edadOk = estado.edad === 'todas' || Number(card.dataset.edad) <= Number(estado.edad);
-        const habOk  = estado.habilidad === 'todas' ||
-                       card.dataset.habilidades.split(' ').includes(estado.habilidad);
-        const mostrar = edadOk && habOk;
+        const edadOk = estado.edad === 'todas' ||
+                       card.dataset.edades.split(' ').includes(estado.edad);
+        const catOk  = estado.categoria === 'todas' ||
+                       card.dataset.cats.split(' ').includes(estado.categoria);
+        const mostrar = edadOk && catOk;
         card.hidden = !mostrar;
         if (mostrar) visibles++;
       });
       vacio.hidden = visibles > 0;
       conteo.textContent = visibles === 1
-        ? '1 chunche encontrado'
-        : `${visibles} chunches encontrados`;
+        ? '1 juguete encontrado'
+        : `${visibles} juguetes encontrados`;
     };
+
+    /* Permite que otras secciones pidan un filtro: los enlaces de familia
+       y el botón "ver juguetes" de la guía por edad. */
+    const marcar = (grupoClave, valor) => {
+      const grupo = $(`.chips[data-filter-group="${grupoClave}"]`);
+      if (!grupo) return;
+      $$('.chip', grupo).forEach(c => {
+        const activo = c.dataset.value === valor;
+        c.classList.toggle('is-active', activo);
+        c.setAttribute('aria-pressed', String(activo));
+      });
+      estado[grupoClave] = valor;
+    };
+
+    document.addEventListener('purapieza:filtrar', e => {
+      marcar('edad', e.detail.edad || 'todas');
+      marcar('categoria', e.detail.categoria || 'todas');
+      aplicar();
+    });
 
     $$('.chips[data-filter-group]').forEach(grupo => {
       const clave = grupo.dataset.filterGroup;
@@ -231,6 +345,163 @@
       const texto = $('#orderForm [name="mensaje"]');
       if (texto) texto.value = `Me interesa el ${btn.dataset.pedir}. `;
     });
+  })();
+
+  /* ------------------------------------------- 5b. Guía de edad por meses */
+  (function guia() {
+    const panel = $('#guiaPanel');
+    const barra = $('.guia__meses');
+    if (!panel || !barra) return;
+
+    const TRAMOS = {
+      '0-3': {
+        titulo: 'Recién llegado al mundo',
+        hito: 'Enfoca apenas a 20–30 cm y sigue objetos lentos con la mirada. Todavía no agarra a voluntad: las manos van casi siempre cerradas.',
+        buscar: 'Contraste extremo en blanco y negro, movimiento lento y sonidos suaves. Nada de colores pastel: todavía no los distingue.',
+        cats: ['temprana', 'sensorial'],
+        recos: ['Móvil Munari de Contrastes'],
+        filtro: '0-6m'
+      },
+      '3-6': {
+        titulo: 'Descubre que tiene manos',
+        hito: 'Agarra lo que le pongan en la palma y se lo lleva directo a la boca. Empieza a sostener la cabeza y a interesarse por su propio reflejo.',
+        buscar: 'Piezas livianas y grandes que la mano entera pueda rodear. Aquí arranca la etapa de todo-a-la-boca: pieza única, sin excepciones.',
+        cats: ['sensorial', 'temprana'],
+        recos: ['Sonaja Aro Gigante'],
+        filtro: '0-6m'
+      },
+      '6-9': {
+        titulo: 'Se sienta y experimenta',
+        hito: 'Se sostiene sentado, pasa objetos de una mano a la otra y golpea todo para escuchar qué suena. Descubre que sus actos producen efectos.',
+        buscar: 'Texturas encontradas en una misma pieza, sonido suave al moverse y formas que rueden despacio para invitar al gateo.',
+        cats: ['sensorial', 'desarrollo'],
+        recos: ['Cascabel de Texturas', 'Pelota Sensorial Calada'],
+        filtro: '6-12m'
+      },
+      '9-12': {
+        titulo: 'Llega la pinza fina',
+        hito: 'Agarra con índice y pulgar, señala, y se obsesiona con meter y sacar cosas de recipientes. Entiende que lo que desaparece sigue existiendo.',
+        buscar: 'Objetos que entren y salgan, tapas, gavetas. Es el momento exacto del cubo de permanencia.',
+        cats: ['montessori', 'desarrollo'],
+        recos: ['Cubo de Permanencia'],
+        filtro: '6-12m'
+      },
+      '12-18': {
+        titulo: 'Camina y encaja',
+        hito: 'Camina, se agacha y vuelve a pararse. Apila, encaja y resuelve por ensayo y error, con una tolerancia a la frustración que crece cada semana.',
+        buscar: 'Encajables de piezas grandes y torres de aros: una sola dificultad por juguete, para que el logro se vea claro.',
+        cats: ['montessori', 'didactico'],
+        recos: ['Encajable de Formas Gigantes', 'Torre de Aros Graduada'],
+        filtro: '12-24m'
+      },
+      '18-24': {
+        titulo: 'Explosión de palabras',
+        hito: 'El vocabulario se dispara e imita todo lo que hacen los adultos. Empieza a jugar a "hacer como si".',
+        buscar: 'Juguetes que se puedan nombrar: animales, objetos de la casa. Cada pieza es una palabra nueva.',
+        cats: ['didactico', 'desarrollo'],
+        recos: ['Encajable de Animales Ticos'],
+        filtro: '12-24m'
+      },
+      '24-36': {
+        titulo: '"¡Yo solo!"',
+        hito: 'Quiere hacerlo todo sin ayuda. Clasifica por color y tamaño, vierte, abrocha y se enoja si le quitan la tarea de las manos.',
+        buscar: 'Vida práctica: botones, broches, trasvases. Cosas de verdad, no versiones de juguete.',
+        cats: ['montessori', 'desarrollo'],
+        recos: ['Tabla de Botones y Broches', 'Rana Saltarina Articulada'],
+        filtro: '24-36m'
+      }
+    };
+
+    const ficha = (nombre) => {
+      const c = CHUNCHES.find(x => x.nombre === nombre);
+      if (!c) return '';
+      return `
+        <article class="reco">
+          <span class="reco__emoji" style="--art:${c.color}" aria-hidden="true">${c.emoji}</span>
+          <div>
+            <h4>${c.nombre}</h4>
+            <p>${c.etiquetas.join(' · ')}</p>
+          </div>
+          <p class="reco__precio">${colones(c.precio)}</p>
+        </article>`;
+    };
+
+    const pintar = clave => {
+      const t = TRAMOS[clave];
+      panel.innerHTML = `
+        <div class="guia__texto">
+          <h3>${t.titulo}</h3>
+          <div class="guia__bloque">
+            <p class="guia__label">Qué está pasando</p>
+            <p>${t.hito}</p>
+          </div>
+          <div class="guia__bloque">
+            <p class="guia__label">Qué buscar</p>
+            <p>${t.buscar}</p>
+          </div>
+          <div class="guia__cats">
+            ${t.cats.map(k => `<span class="tag tag--${k}">${NOMBRE_CAT[k]}</span>`).join('')}
+          </div>
+        </div>
+        <div class="guia__recos">
+          <p class="guia__label">Lo que recomendamos</p>
+          ${t.recos.map(ficha).join('')}
+          <button class="btn btn--ghost btn--full" type="button" data-ver-edad="${t.filtro}">
+            Ver todo lo de esta edad ↓
+          </button>
+        </div>`;
+    };
+
+    const botones = $$('.mes', barra);
+    const activar = btn => {
+      botones.forEach(b => {
+        const activo = b === btn;
+        b.classList.toggle('is-active', activo);
+        b.setAttribute('aria-selected', String(activo));
+        b.tabIndex = activo ? 0 : -1;
+      });
+      pintar(btn.dataset.mes);
+    };
+
+    barra.addEventListener('click', e => {
+      const btn = e.target.closest('.mes');
+      if (btn) activar(btn);
+    });
+
+    barra.addEventListener('keydown', e => {
+      const i = botones.indexOf(document.activeElement);
+      if (i < 0) return;
+      let destino = null;
+      if (e.key === 'ArrowRight') destino = botones[(i + 1) % botones.length];
+      if (e.key === 'ArrowLeft')  destino = botones[(i - 1 + botones.length) % botones.length];
+      if (e.key === 'Home') destino = botones[0];
+      if (e.key === 'End')  destino = botones[botones.length - 1];
+      if (!destino) return;
+      e.preventDefault();
+      destino.focus();
+      activar(destino);
+    });
+
+    /* "Ver todo lo de esta edad" filtra el catálogo y baja hasta él */
+    panel.addEventListener('click', e => {
+      const btn = e.target.closest('[data-ver-edad]');
+      if (!btn) return;
+      document.dispatchEvent(new CustomEvent('purapieza:filtrar', {
+        detail: { edad: btn.dataset.verEdad, categoria: 'todas' }
+      }));
+      $('#productos').scrollIntoView({ behavior: menosMovimiento ? 'auto' : 'smooth' });
+    });
+
+    /* Los enlaces de la sección de familias filtran por categoría */
+    $$('[data-ir-cat]').forEach(a => {
+      a.addEventListener('click', () => {
+        document.dispatchEvent(new CustomEvent('purapieza:filtrar', {
+          detail: { edad: 'todas', categoria: a.dataset.irCat }
+        }));
+      });
+    });
+
+    pintar('0-3');
   })();
 
   /* --------------------------------------------------- 6. Pestañas del lab */
